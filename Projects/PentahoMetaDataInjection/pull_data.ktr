@@ -68,34 +68,31 @@
   <created_user>-</created_user>
   <created_date>2019&#x2f;06&#x2f;11 18&#x3a;58&#x3a;17.039</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2020&#x2f;06&#x2f;21 07&#x3a;58&#x3a;47.175</modified_date>
+  <modified_date>2020&#x2f;06&#x2f;21 09&#x3a;27&#x3a;34.538</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
   </notepads>
   <connection>
-    <name>MysqlLocal</name>
-    <server>localhost</server>
-    <type>MYSQL</type>
+    <name>OraLocal</name>
+    <server/>
+    <type>ORACLE</type>
     <access>Native</access>
-    <database>sales</database>
-    <port>3306</port>
-    <username>root</username>
-    <password>Encrypted 2be98afc86aa7f2e4cb79ce10cc9da0ce</password>
+    <database>&#x28;DESCRIPTION&#x3d;&#x28;ADDRESS_LIST&#x3d;&#x28;ADDRESS&#x3d;&#x28;PROTOCOL&#x3d;TCP&#x29;&#x28;HOST&#x3d;localhost&#x29;&#x28;PORT&#x3d;1521&#x29;&#x29;&#x29;&#x28;CONNECT_DATA&#x3d;&#x28;SID&#x3d;XE&#x29;&#x29;&#x29;</database>
+    <port>-1</port>
+    <username>hr</username>
+    <password>Encrypted 2be98afc86aa7f2e4cb79ce10bef2a7c8</password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
     <attributes>
-      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
-      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>-1</attribute></attribute>
       <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>Y</attribute></attribute>
       <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
       <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
       <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
       <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
@@ -115,7 +112,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <connection>MysqlLocal</connection>
+    <connection>OraLocal</connection>
     <sql/>
     <limit/>
     <lookup/>
@@ -141,11 +138,11 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <connection>MysqlLocal</connection>
+    <connection>OraLocal</connection>
     <schema>&#x24;&#x7b;TARGET_SCHEMA&#x7d;</schema>
     <table>&#x24;&#x7b;TARGET_TABLE&#x7d;</table>
     <commit>1000</commit>
-    <truncate>N</truncate>
+    <truncate>Y</truncate>
     <ignore_errors>N</ignore_errors>
     <use_batch>Y</use_batch>
     <specify_fields>Y</specify_fields>

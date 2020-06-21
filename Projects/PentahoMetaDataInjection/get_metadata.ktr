@@ -68,7 +68,7 @@
   <created_user>-</created_user>
   <created_date>2019&#x2f;06&#x2f;11 18&#x3a;16&#x3a;15.636</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2020&#x2f;06&#x2f;21 07&#x3a;59&#x3a;03.584</modified_date>
+  <modified_date>2020&#x2f;06&#x2f;21 09&#x3a;21&#x3a;46.502</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -179,27 +179,6 @@
       <drawshadow>Y</drawshadow>
     </notepad>
     <notepad>
-      <note>      Get &#xd;&#xa;  connection&#xd;&#xa;    variables</note>
-      <xloc>84</xloc>
-      <yloc>331</yloc>
-      <width>92</width>
-      <heigth>70</heigth>
-      <fontname>Segoe UI</fontname>
-      <fontsize>9</fontsize>
-      <fontbold>N</fontbold>
-      <fontitalic>N</fontitalic>
-      <fontcolorred>0</fontcolorred>
-      <fontcolorgreen>0</fontcolorgreen>
-      <fontcolorblue>0</fontcolorblue>
-      <backgroundcolorred>255</backgroundcolorred>
-      <backgroundcolorgreen>205</backgroundcolorgreen>
-      <backgroundcolorblue>112</backgroundcolorblue>
-      <bordercolorred>100</bordercolorred>
-      <bordercolorgreen>100</bordercolorgreen>
-      <bordercolorblue>100</bordercolorblue>
-      <drawshadow>Y</drawshadow>
-    </notepad>
-    <notepad>
       <note>added file_id to join in later stage</note>
       <xloc>292</xloc>
       <yloc>523</yloc>
@@ -222,27 +201,24 @@
     </notepad>
   </notepads>
   <connection>
-    <name>MysqlLocal</name>
-    <server>localhost</server>
-    <type>MYSQL</type>
+    <name>OraLocal</name>
+    <server/>
+    <type>ORACLE</type>
     <access>Native</access>
-    <database>sales</database>
-    <port>3306</port>
-    <username>root</username>
-    <password>Encrypted 2be98afc86aa7f2e4cb79ce10cc9da0ce</password>
+    <database>&#x28;DESCRIPTION&#x3d;&#x28;ADDRESS_LIST&#x3d;&#x28;ADDRESS&#x3d;&#x28;PROTOCOL&#x3d;TCP&#x29;&#x28;HOST&#x3d;localhost&#x29;&#x28;PORT&#x3d;1521&#x29;&#x29;&#x29;&#x28;CONNECT_DATA&#x3d;&#x28;SID&#x3d;XE&#x29;&#x29;&#x29;</database>
+    <port>-1</port>
+    <username>hr</username>
+    <password>Encrypted 2be98afc86aa7f2e4cb79ce10bef2a7c8</password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
     <attributes>
-      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
-      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>-1</attribute></attribute>
       <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>Y</attribute></attribute>
       <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
       <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
       <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
       <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
@@ -514,8 +490,8 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <connection>MysqlLocal</connection>
-    <sql>SELECT a.table_name,a.column_name,t.table_schema&#xd;&#xa;FROM information_schema.columns  a RIGHT JOIN information_schema.TABLES t&#xd;&#xa;on a.table_name &#x3d;t.table_name where t.table_name&#x3d;upper&#x28;&#x27;&#x24;&#x7b;SOURCE_TABLE&#x7d;&#x27;&#x29; and &#x28;t.table_schema&#x29;&#x3d;upper&#x28;&#x27;&#x24;&#x7b;SOURCE_SCHEMA&#x7d;&#x27;&#x29;&#x3b;</sql>
+    <connection>OraLocal</connection>
+    <sql>SELECT a.table_name,a.column_name,t.owner table_schema&#xd;&#xa;FROM ALL_TAB_COLUMNS  a FULL OUTER JOIN ALL_OBJECTS t&#xd;&#xa;on a.table_name &#x3d;t.object_name and a.owner&#x3d;t.owner &#xd;&#xa;where upper&#x28;t.object_name&#x29;&#x3d;upper&#x28;&#x27;&#x24;&#x7b;SOURCE_TABLE&#x7d;&#x27;&#x29; and upper&#x28;t.owner&#x29;&#x3d;upper&#x28;&#x27;&#x24;&#x7b;SOURCE_SCHEMA&#x7d;&#x27;&#x29;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -523,8 +499,8 @@
     <lazy_conversion_active>N</lazy_conversion_active>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>228</xloc>
-      <yloc>363</yloc>
+      <xloc>224</xloc>
+      <yloc>352</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
